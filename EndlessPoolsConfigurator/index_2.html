@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Endless Pools Configurator Demo</title>
+
+    <script type="text/javascript" src="js/vendors/sketchfab-viewer-1.5.2.js"></script>
+    <link rel="stylesheet" type="text/css" href="style/app_2.css">
+</head>
+
+<body>
+  <!-- Insert an empty iframe, hidden by default using a class-->
+  <iframe src="" id="api-frame" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" width="640" height="480"></iframe>
+  <img class="logo" src="assets/ep-logo.png" alt="" width="160">
+
+  <!--Dimension UI-->
+  <!--#region-->
+  <div class="text" id ="t_config"></div>
+  <div class="text" id ="t_select"></div>
+  <div class="text" id ="t_width"></div>
+  <div class="text" id ="t_length"></div>
+  <div class="text" id ="t_depth"></div>
+
+  <div class="dropdown" id = "width">
+    <button class="dropbtn" id="n_width">7'</button>
+    <div class="dropdown-content">
+      <button class="button" id="7">7'</button>
+      <button class="button" id="8">8'</button>
+      <button class="button" id="9">9'</button>
+      <button class="button" id="10">10'</button>
+    </div>
+  </div>
+  <div class="dropdown" id = "length">
+    <button class="dropbtn" id='n_length'>14'</button>
+    <div class="dropdown-content">
+      <button class="button" id="12">12'</button>
+      <button class="button" id="13">13'</button>
+      <button class="button" id="14">14'</button>
+      <button class="button" id="15">15'</button>
+      <button class="button" id="16">16'</button>
+    </div>
+  </div>
+  <div class="dropdown" id = "depth">
+    <button class="dropbtn" id='n_depth'>42"</button>
+    <div class="dropdown-content">
+      <button class="button" id="42">42"</button>
+      <button class="button" id="48">48"</button>
+      <button class="button" id="54">54"</button>
+    </div>
+  </div>
+  <!--#endregion-->
+
+  <!--Acrylic/Current System UI-->
+  <!--#region-->
+  <div class="text" id ="t_acrylic"></div>
+
+  <div class="text" id ="l_acrylic"></div>
+
+  <label class="container">
+    <input type="radio" checked="checked" name="radio" value="Platinum" onclick="changeAcrylic(this)">
+    <span class="checkmark" id="r_platinum"></span>
+  </label>
+  <label class="container">
+    <input type="radio" name="radio" value="Sapphire" onclick="changeAcrylic(this)">
+    <span class="checkmark" id="r_sapphire"></span>
+  </label>
+  <!--#endregion-->
+
+  <div class="options"></div>
+  <!-- Initialize the viewer -->
+  <script src="js/app_EP.js"></script>
+
+  <!--<button onclick="loadmodel()">Click me to load model and show iframe.</button>-->
+</body>
+
+</html>

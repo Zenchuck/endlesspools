@@ -1,0 +1,160 @@
+body{background:#626262;font-family:Roboto,sans-serif;padding:0;margin:0;color:#888}
+
+#api-frame,.instructions,.logo,.options,.text{position:absolute}
+#api-frame{display:block;left:0;top:0;width:100%;height:100%;border:0}
+
+.logo{bottom:50px;right:30px}
+.text{color: white;font-family: Arial; font-size: 14px;font-weight: 500}
+.options li.selected:after,.options li:before{content:'';border-radius:50%}
+.options{display:block;left:10px;top:200px;z-index:1}
+.options ul{margin:0 0 30px;padding:0}
+.options li{position:relative;display:inline-block;list-style:none;margin:0 0 0 5px;padding:0;cursor:pointer}
+.options li.selected:before{border:2px solid rgba(0,0,0,.7)}
+.options li:before{display:inline-block;width:30px;height:30px;border:2px solid transparent}
+.options li.selected:after{position:absolute;display:block;top:12px;left:12px;width:10px;height:10px;background:#fff;box-shadow:0 0 1px #333}
+.options li.option_bracelet_sphere:before{background:#00B4FE}
+.options li.option_bracelet_torus:before{background:#00B4FE}
+.options li.option_bracelet_cube:before{background:#00B4FE}
+.options li.option_bracelet_cylinder:before{background:#00B4FE}
+.options li.option_coque_cone:before{background:#888}
+.options li.option_coque_monkey:before{background:#888}
+.options li.option_coque_ico:before{background:#888}
+
+.select{
+    position:absolute;
+    top:200;
+    left:10;
+}
+.select-option{
+    position:absolute;
+    top:200;
+    left:10;
+}
+/*butttons for drop down lists*/
+/*#region*/ 
+.button {
+    background-color: rgba(221, 221, 221, 0.5);
+    border: none;
+    color: black;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    position: relative;
+    width: 40px;
+    /*display: inline-block;*/
+    /*margin: 4px 2px;*/
+    cursor: pointer;
+    /*border-radius: 2px;*/
+    z-index: 1;
+  }
+
+
+.dropdown {
+    position: absolute;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: rgba(0, 182, 254, 0.75);
+    color: white;
+    width: 40px;
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    border-radius: 3px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    
+    /*position: relative;*/
+    background-color: #f1f1f1c0;
+    /*min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);*/
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.button:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: rgb(0, 140, 196);}
+/*#endregion*/
+
+/*custom radio buttons*/
+/*#region*/
+/* The container */
+.container {
+    display: block;
+    position: absolute;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default radio button */
+  .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  /* Create a custom radio button */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+    /*z-index: 1;*/
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .container:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the radio button is checked, add a blue background */
+  .container input:checked ~ .checkmark {
+    background-color: #2196F3;
+  }
+  
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the indicator (dot/circle) when checked */
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the indicator (dot/circle) */
+  .container .checkmark:after {
+       top: 9px;
+      left: 9px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: white;
+  }
+/*#endregion*/
