@@ -61,6 +61,7 @@ var EP_depth = 42;
 
 //Set width
 //#region
+/*
 document.getElementById("7").addEventListener('click',function(){
     EP_width = 7;
     RedrawDisplay();
@@ -128,7 +129,7 @@ function RedrawDisplay(){
     lengthDisplay.innerHTML = EP_length+"'";
     depthDisplay.innerHTML = EP_depth+'"';
 };
-
+*/
 //var acrylicLabel = document.getElementById("t_acrylicLabel");
 
 function changeAcrylic(obj)
@@ -144,10 +145,30 @@ for (i = 0; i < myNodelist.length; i++) {
     myNodelist[i].addEventListener('click',SetModel());
 };*/
 
+//Accordian
+
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+
+
+
 //GUI
 function initGUI(){
     //Dimension UI
     //#region
+    /*
     var t_config = document.getElementById("t_config");
     t_config.innerHTML = "ORIGINAL EP CONFIGURATION";
     t_config.style.top = "18px";
@@ -213,6 +234,7 @@ function initGUI(){
     r_sapphire.style.top = "165px";
     r_sapphire.style.left = "65px";
     r_sapphire.style.backgroundColor = '#000066';
+    */
 
 }
 initGUI();

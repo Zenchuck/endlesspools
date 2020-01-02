@@ -20,16 +20,6 @@ body{background:#626262;font-family:Roboto,sans-serif;padding:0;margin:0;color:#
 .options li.option_coque_monkey:before{background:#888}
 .options li.option_coque_ico:before{background:#888}
 
-.select{
-    position:absolute;
-    top:200;
-    left:10;
-}
-.select-option{
-    position:absolute;
-    top:200;
-    left:10;
-}
 /*butttons for drop down lists*/
 /*#region*/ 
 .button {
@@ -158,3 +148,52 @@ body{background:#626262;font-family:Roboto,sans-serif;padding:0;margin:0;color:#
       background: white;
   }
 /*#endregion*/
+
+/*accordian*/
+/*#region*/
+.accordion {
+  background-color: rgba(65, 65, 65, 0.4);
+  color: #ccc;
+  cursor: pointer;
+  padding: 10px 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #666;
+}
+
+.accordion:after {
+  content: '\002B';
+  color: #ccc;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.panel {
+  font-size: 14px;
+  padding: 0 18px;
+  background-color: rgba(85, 85, 85, 0.6);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+/*#endregion*/
+
+.element {
+  z-index: 1;
+  position: absolute;
+  top: 50px;
+  left: 10px;
+  width: 250px;
+}

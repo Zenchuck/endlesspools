@@ -1,41 +1,186 @@
-﻿<!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Pool Configurator</title>
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,900,700,500,100,300' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="style/app.1.0.1.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Endless Pools Configurator Demo</title>
+
+    <script type="text/javascript" src="js/vendors/sketchfab-viewer-1.5.2.js"></script>
+    <link rel="stylesheet" type="text/css" href="style/app_2.css">
 </head>
 
 <body>
-<iframe src="" id="api-frame" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" width="640" height="480"></iframe>
+  <!-- Insert an empty iframe, hidden by default using a class-->
+  <iframe src="" id="api-frame" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" width="640" height="480"></iframe>
+  <img class="logo" src="assets/ep-logo.png" alt="" width="160">
 
-<img class="logo" src="assets/ep-logo.png" alt="" width="300">
+  <!--Dimension UI-->
+  <!--#region-->
+  <!--
+  <div class="text" id ="t_config"></div>
+  <div class="text" id ="t_select"></div>
+  <div class="text" id ="t_width"></div>
+  <div class="text" id ="t_length"></div>
+  <div class="text" id ="t_depth"></div>
 
-<div class="options"></div>
-<!--<div class="options"></div>-->
+  <div class="dropdown" id = "width">
+    <button class="dropbtn" id="n_width">7'</button>
+    <div class="dropdown-content">
+      <button class="button" id="7">7'</button>
+      <button class="button" id="8">8'</button>
+      <button class="button" id="9">9'</button>
+      <button class="button" id="10">10'</button>
+    </div>
+  </div>
+  <div class="dropdown" id = "length">
+    <button class="dropbtn" id='n_length'>14'</button>
+    <div class="dropdown-content">
+      <button class="button" id="12">12'</button>
+      <button class="button" id="13">13'</button>
+      <button class="button" id="14">14'</button>
+      <button class="button" id="15">15'</button>
+      <button class="button" id="16">16'</button>
+    </div>
+  </div>
+  <div class="dropdown" id = "depth">
+    <button class="dropbtn" id='n_depth'>42"</button>
+    <div class="dropdown-content">
+      <button class="button" id="42">42"</button>
+      <button class="button" id="48">48"</button>
+      <button class="button" id="54">54"</button>
+    </div>
+  </div>
+-->
+  <!--#endregion-->
 
-<div class="instructions">
-  Click to rotate<br>
-  Scroll to zoom
-</div>
+  <!--Acrylic/Current System UI-->
+  <!--#region-->
+  <!--
+  <div class="text" id ="t_acrylic"></div>
 
-<ul class="share-buttons">
-  <li><!--<a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2FEndlessPools%2F" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&t=' + encodeURIComponent(document.URL)); return false;">--><img src="assets/Facebook.png"></a></li>
-  <li><!--<a href="https://twitter.com/intent/tweet?source=https%3A%2F%2Flabs.sketchfab.com%2Fexperiments%2Fwatch-configurator%2F&text=:%20https%3A%2F%2Flabs.sketchfab.com%2Fexperiments%2Fwatch-configurator%2F&via=Sketchfab" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20'  + encodeURIComponent(document.URL)); return false;">--><img src="assets/Twitter.png"></a></li>
-  <li><!--<a href="https://plus.google.com/share?url=https%3A%2F%2Flabs.sketchfab.com%2Fexperiments%2Fwatch-configurator%2F" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(document.URL)); return false;">--><img src="assets/Google+.png"></a></li>
-</ul>
+  <div class="text" id ="l_acrylic"></div>
 
-<script type="text/javascript" src="js/vendors/sketchfab-viewer-1.0.0.js"></script>
-<script type="text/javascript" src="js/app.1.0.1.js"></script>
-<script type="text/javascript">
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  <label class="container">
+    <input type="radio" checked="checked" name="radio" value="Platinum" onclick="changeAcrylic(this)">
+    <span class="checkmark" id="r_platinum"></span>
+  </label>
+  <label class="container">
+    <input type="radio" name="radio" value="Sapphire" onclick="changeAcrylic(this)">
+    <span class="checkmark" id="r_sapphire"></span>
+  </label>
+  -->
+  <!--#endregion-->
+  <div class="element">
+    <button class="accordion">Installation:</button>
+    <div class="panel">
+      <p>
+        <input type="radio" name="installation" value="above" checked="checked"> Above Ground<br>
+        <input type="radio" name="installation" value="partial"> Partially In Ground<br>
+        <input type="radio" name="installation" value="inGround"> Fully In Ground
+      </p>
+    </div>
 
-ga('create', 'UA-22680456-16', 'auto');
-ga('send', 'pageview');
-</script>
+    <button class="accordion">Location:</button>
+    <div class="panel">
+      <p>
+        <input type="radio" name="location" value="indoor" checked="checked"> Indoor<br>
+        <input type="radio" name="location" value="outdoor"> Outdoor
+      </p>
+    </div>
+
+    <button class="accordion">Dimensions:</button>
+    <div class="panel">
+      <p>
+        <label> 
+          <select>
+            <option value="7" selected="selected">7'</option>
+            <option value="8">8'</option>
+            <option value="9">9'</option>
+            <option value="10">10'</option>
+          </select>
+          Width</label><br><br>
+        <label> 
+          <select>
+            <option value="12">12'</option>
+            <option value="13">13'</option>
+            <option value="14" selected="selected">14'</option>
+            <option value="15">15'</option>
+            <option value="16">16'</option>
+          </select>
+          Length</label><br><br>
+        <label> 
+          <select>
+            <option value="42" selected="selected">42"</option>
+            <option value="48">48"</option>
+            <option value="54">54"</option>
+          </select>
+          Depth</label>
+      </p>
+    </div>
+
+    <button class="accordion">Current System Color:</button>
+    <div class="panel">
+      <p>
+        <input type="radio" name="currentColor" value="platinum" checked="checked"> Platinum<br>
+        <input type="radio" name="currentColor" value="sapphire"> Sapphire
+      </p>
+    </div>
+
+    <button class="accordion">Liner Color:</button>
+    <div class="panel">
+      <p>
+        <input type="radio" name="linerColor" value="lightBlue" checked="checked"> Light Blue<br>
+        <input type="radio" name="linerColor" value="darkBlue"> Dark Blue<br>
+        <input type="radio" name="linerColor" value="ancientSeas"> Ancient Seas<br>
+        <input type="radio" name="linerColor" value="grayMarino"> Gray Marino<br>
+        <input type="radio" name="linerColor" value="siestaWave"> Siesta Wave<br>
+        <input type="radio" name="linerColor" value="diffusion"> Diffusion<br>
+        <input type="radio" name="linerColor" value="mountainTop"> Mountain Top<br>
+        <input type="radio" name="linerColor" value="blueMosaic"> Blue Mosaic<br>
+        <input type="radio" name="linerColor" value="hampton"> Hampton<br>
+        <input type="radio" name="linerColor" value="seaGlass"> Seaglass
+      </p>
+    </div>
+
+    <button class="accordion">Cabinet Color:</button>
+    <div class="panel">
+      <p>
+        <input type="radio" name="cabinetColor" value="mahogany" checked="checked"> Mahogany<br>
+        <input type="radio" name="cabinetColor" value="slate"> Slate
+      </p>
+    </div>
+
+    <button class="accordion">Coping System:</button>
+    <div class="panel">
+      <p>
+        <input type="radio" name="copingSystem" value="syntheticFront" checked="checked"> Front<br>
+        <input type="radio" name="copingSystem" value="sentheticMoonlight"> Moonlight<br>
+        <input type="radio" name="copingSystem" value="woodReciever"> Wood Reciever<br>
+        <input type="radio" name="copingSystem" value="bullnose"> Bullnose
+      </p>
+    </div>
+
+    <button class="accordion">Treadmill:</button>
+    <div class="panel">
+      <p>
+        <input type="radio" name="treadmill" value="on" checked="checked"> On<br>
+        <input type="radio" name="treadmill" value="off"> Off
+      </p>
+    </div>
+
+    <button class="accordion">Cover:</button>
+    <div class="panel">
+      <p>
+        <input type="radio" name="cover" value="manual" checked="checked"> Manual<br>
+        <input type="radio" name="cover" value="auto"> Auto
+      </p>
+    </div>
+  </div>
+  <div class="options"></div>
+  <!-- Initialize the viewer -->
+  <script src="js/app_EP.js"></script>
+
+  <!--<button onclick="loadmodel()">Click me to load model and show iframe.</button>-->
 </body>
+
 </html>
